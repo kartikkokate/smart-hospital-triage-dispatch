@@ -1,0 +1,13 @@
+patientId,fullName,age,complaint,urgency,arrivalSequence,simulatedArrivalTime,currentLocationNode,targetLocationNode,billingAmount,initialState
+P101,Sarah Connor,29,Arm Fracture,4,1,10,1,8,450.00,TRIAGED_WAITING
+P102,Arthur Dent,42,Minor Laceration,5,2,15,1,1,120.00,APPOINTMENT_SCHEDULED
+P103,James Howlett,55,Appendicitis,2,3,20,1,3,2100.00,TRIAGED_WAITING
+P104,Marcus Brody,58,STEMI Heart Attack,1,4,22,1,2,3500.00,TRIAGED_WAITING
+P105,Bruce Wayne,38,Smoke Inhalation,2,5,28,1,4,1850.00,TRIAGED_WAITING
+P106,Diana Prince,31,Diabetic Review,5,6,35,1,1,95.00,APPOINTMENT_SCHEDULED
+P107,Peter Parker,21,Anaphylaxis,1,7,40,1,2,800.00,TRIAGED_WAITING
+P108,Natasha Romanoff,34,Puncture Wound,3,8,44,1,3,1250.00,TRIAGED_WAITING
+P109,Clark Kent,36,Abdominal Trauma,2,9,50,1,5,1600.00,TRIAGED_WAITING
+P110,Ellen Ripley,49,Chemical Eye Splash,3,10,55,1,1,620.00,TRIAGED_WAITING
+P111,Walter White,52,Chronic Cough,5,11,60,1,1,110.00,APPOINTMENT_SCHEDULED
+P112,Barry Allen,28,Collision Trauma,1,12,65,1,2,2900.00,TRIAGED_WAITING

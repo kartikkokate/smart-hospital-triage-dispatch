@@ -1,0 +1,33 @@
+# Campus Map Topology Configuration
+# NODES: NodeId,Name,BuildingWing,IsTreatmentUnit
+[NODES]
+0,Ambulance Reception Bay,Exterior Reception Bay,false
+1,ER Triage & Main Waiting Hall,Emergency Wing Ground Floor,false
+2,Emergency Resuscitation Bay,Emergency Wing Trauma Floor,true
+3,Surgical Operating Theatres,Surgical Wing Floor 2,true
+4,Intensive Care Unit,Critical Care Pavilion,true
+5,Central Diagnostic Radiology & CT,Diagnostic Imaging Center,true
+6,Blood Bank & Pathology Lab,Clinical Laboratory Wing,false
+7,Central Inpatient Pharmacy,Central Pharmacy Hub,false
+8,General Inpatient Wards,East Inpatient Block,true
+9,Rooftop Air Ambulance Heliport,Building Rooftop Heliport,false
+10,Infectious Disease Isolation Wing,Special Containment Pavilion,true
+11,Campus Engineering & Utility Substation,Engineering Services Block,false
+
+# EDGES: NodeU,NodeV,TransitSeconds,Description
+[EDGES]
+0,1,60,Ambulance Bay to ER Triage
+0,2,80,Ambulance Bay to Resuscitation Bay
+0,6,180,Ambulance Bay to Blood Bank
+1,2,100,ER Triage to Resuscitation Bay
+1,5,120,ER Triage to Radiology/CT
+1,7,140,ER Triage to Pharmacy
+2,4,90,Resuscitation Bay to ICU
+2,9,60,Resuscitation Bay to Heliport
+3,5,90,Surgical OT to Radiology/CT
+3,7,130,Surgical OT to Pharmacy
+3,8,160,Surgical OT to General Wards
+4,5,150,ICU to Radiology/CT
+6,7,110,Blood Bank to Pharmacy
+8,10,200,General Wards to Isolation Wing
+10,11,180,Isolation Wing to Utility Substation

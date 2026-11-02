@@ -1,0 +1,859 @@
+================================================================================
+    SMART HOSPITAL EMERGENCY TRIAGE & ROUTE DISPATCH SYSTEM (CS2305)
+       Academic Simulation - AY 2026-27 | Data Structures-I Project
+================================================================================
+  [IN-MEMORY PERSISTENCE NOTICE]
+  All hospital operational state (patients, triage heap, appointment queue,
+  dispatch movements, audit trail) is maintained exclusively in volatile RAM.
+  Exiting the application will reset all in-memory structures without disk persistence.
+
+================================================================================
+  MAIN MENU - HOSPITAL OPERATIONS & DISPATCH
+  [Clock: 65s] | [Patients: 12] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. Patient Registration & Registry Management
+  2. Emergency Clinical Triage & Acuity Updates
+  3. Outpatient Clinic Appointments & FIFO Queue
+  4. Ambulance Dispatch & Patient Transit Operations
+  5. Campus Topology, Routing & Corridor Management
+  6. Patient Reports & Custom Sorting Analytics
+  7. Educational Data Structure Demonstrations (CO1 - CO6)
+  8. System Audit Trail & Cross-Service Integrity Check
+  9. Exit System
+
+Enter choice [1-9] (0 or 'b' to back/exit): 
+================================================================================
+  PATIENT REGISTRATION & REGISTRY MANAGEMENT
+  [Clock: 65s] | [Patients: 12] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. Register New Inpatient / Emergency Patient
+  2. Search Patient Dossier by ID (Full Clinical Details)
+  3. List All Registered Patients in Registry
+  4. View In-Memory Data Storage Architecture Notice
+  0. Return to Main Menu
+
+Enter choice [1-4] (0 or 'b' to back/exit): 
+--- Patient Clinical Registration Form ---
+  Enter Patient ID (e.g. P113, max 16 chars):   Enter Full Legal Name (spaces & apostrophes allowed, max 64 chars):   Enter Patient Age [0 - 150]:   Enter Chief Medical Complaint (max 128 chars):   Enter Acuity Urgency [1: Resuscitation .. 5: Non-Urgent]:   Enter Current Campus Location Node ID [0 - 11]:   Enter Target Destination Node ID [0 - 11]:   Enter Initial Billing Balance [$0.00 - $1,000,000.00]: 
+  [SUCCESS] Patient P501 registered successfully!
+  Full Name:      Jonathan Wick
+  Initial State:  REGISTERED
+  Urgency Acuity: 1 (1 - Resuscitation)
+  Current Node:   0 (Ambulance Reception Bay)
+  Target Node:    3 (Surgical Operating Theatres)
+
+================================================================================
+  PATIENT REGISTRATION & REGISTRY MANAGEMENT
+  [Clock: 65s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. Register New Inpatient / Emergency Patient
+  2. Search Patient Dossier by ID (Full Clinical Details)
+  3. List All Registered Patients in Registry
+  4. View In-Memory Data Storage Architecture Notice
+  0. Return to Main Menu
+
+Enter choice [1-4] (0 or 'b' to back/exit): 
+--- Patient Dossier Lookup ---
+  Enter Patient ID to query: --------------------------------------------------------------------------------
+                          FULL PATIENT CLINICAL DOSSIER                         
+--------------------------------------------------------------------------------
+  Patient ID:          P501
+  Full Legal Name:     Jonathan Wick
+  Age:                 45 years
+  Chief Complaint:     Severe chest trauma with hypotension
+  Clinical Urgency:    1 - 1 - Resuscitation
+  Lifecycle State:     REGISTERED
+  Arrival Sequence:    #13
+  Simulated Arrival:   65s (clock timestamp)
+  Active Waiting:      0 seconds (actively waiting in triage/queue/unassigned pending)
+  Current Location:    Node 0 (Ambulance Reception Bay)
+  Target Location:     Node 3 (Surgical Operating Theatres)
+  Assigned Resource:   None (Unassigned)
+  Billing Balance:     $1500.00
+  Snapshot Timestamp:  65s
+--------------------------------------------------------------------------------
+
+================================================================================
+  PATIENT REGISTRATION & REGISTRY MANAGEMENT
+  [Clock: 65s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. Register New Inpatient / Emergency Patient
+  2. Search Patient Dossier by ID (Full Clinical Details)
+  3. List All Registered Patients in Registry
+  4. View In-Memory Data Storage Architecture Notice
+  0. Return to Main Menu
+
+Enter choice [1-4] (0 or 'b' to back/exit): 
+================================================================================
+  MAIN MENU - HOSPITAL OPERATIONS & DISPATCH
+  [Clock: 65s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. Patient Registration & Registry Management
+  2. Emergency Clinical Triage & Acuity Updates
+  3. Outpatient Clinic Appointments & FIFO Queue
+  4. Ambulance Dispatch & Patient Transit Operations
+  5. Campus Topology, Routing & Corridor Management
+  6. Patient Reports & Custom Sorting Analytics
+  7. Educational Data Structure Demonstrations (CO1 - CO6)
+  8. System Audit Trail & Cross-Service Integrity Check
+  9. Exit System
+
+Enter choice [1-9] (0 or 'b' to back/exit): 
+================================================================================
+  EMERGENCY CLINICAL TRIAGE & ACUITY MANAGEMENT
+  [Clock: 65s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. View Triage Priority Queue Status & Highest Acuity Candidate
+  2. Intake Registered Patient into Emergency Triage Priority Queue
+  3. Update Patient Clinical Urgency (Preserves Arrival Sequence)
+  0. Return to Main Menu
+
+Enter choice [1-3] (0 or 'b' to back/exit): 
+--- Emergency Triage Priority Queue Status ---
+  Active Patients Waiting in Triage Heap: 9
+  Highest Priority Triage Candidate:
+    Patient ID:       P104 (Marcus Brody)
+    Clinical Urgency: 1 - 1 - Resuscitation
+    Arrival Sequence: #4 (FIFO Tie-Breaker)
+    Current Location: Node 1 (ER Triage & Main Waiting Hall)
+    Patient State:    TRIAGED_WAITING
+
+================================================================================
+  EMERGENCY CLINICAL TRIAGE & ACUITY MANAGEMENT
+  [Clock: 65s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. View Triage Priority Queue Status & Highest Acuity Candidate
+  2. Intake Registered Patient into Emergency Triage Priority Queue
+  3. Update Patient Clinical Urgency (Preserves Arrival Sequence)
+  0. Return to Main Menu
+
+Enter choice [1-3] (0 or 'b' to back/exit): 
+--- Emergency Triage Intake ---
+  Enter Registered Patient ID:   Assign Clinical Urgency Level [1: Resuscitation .. 5: Non-Urgent]:   [SUCCESS] Patient P501 prioritized into triage min-heap with urgency 1 (1 - Resuscitation). Patient State: TRIAGED_WAITING.
+
+================================================================================
+  EMERGENCY CLINICAL TRIAGE & ACUITY MANAGEMENT
+  [Clock: 65s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. View Triage Priority Queue Status & Highest Acuity Candidate
+  2. Intake Registered Patient into Emergency Triage Priority Queue
+  3. Update Patient Clinical Urgency (Preserves Arrival Sequence)
+  0. Return to Main Menu
+
+Enter choice [1-3] (0 or 'b' to back/exit): 
+--- Update Clinical Urgency Acuity ---
+  Enter Patient ID:   Enter New Urgency Level [1: Resuscitation .. 5: Non-Urgent]:   [SUCCESS] Urgency for patient P108 successfully updated to 2 (2 - Emergent).
+  Preserved Arrival Sequence: #8 (maintains stable FIFO tie-breaking).
+
+================================================================================
+  EMERGENCY CLINICAL TRIAGE & ACUITY MANAGEMENT
+  [Clock: 65s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. View Triage Priority Queue Status & Highest Acuity Candidate
+  2. Intake Registered Patient into Emergency Triage Priority Queue
+  3. Update Patient Clinical Urgency (Preserves Arrival Sequence)
+  0. Return to Main Menu
+
+Enter choice [1-3] (0 or 'b' to back/exit): 
+================================================================================
+  MAIN MENU - HOSPITAL OPERATIONS & DISPATCH
+  [Clock: 65s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. Patient Registration & Registry Management
+  2. Emergency Clinical Triage & Acuity Updates
+  3. Outpatient Clinic Appointments & FIFO Queue
+  4. Ambulance Dispatch & Patient Transit Operations
+  5. Campus Topology, Routing & Corridor Management
+  6. Patient Reports & Custom Sorting Analytics
+  7. Educational Data Structure Demonstrations (CO1 - CO6)
+  8. System Audit Trail & Cross-Service Integrity Check
+  9. Exit System
+
+Enter choice [1-9] (0 or 'b' to back/exit): 
+================================================================================
+  OUTPATIENT CLINIC APPOINTMENT SERVICES
+  [Clock: 65s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. Schedule Outpatient Clinic Appointment (FIFO Queue Intake)
+  2. View Scheduled Outpatient Appointment Roster
+  3. Call Next Appointment for Consultation (FIFO Turn Processing)
+  4. Cancel Outpatient Appointment (Encapsulated Queue Removal)
+  5. Convert Outpatient to Emergency Triage (Condition Deterioration)
+  0. Return to Main Menu
+
+Enter choice [1-5] (0 or 'b' to back/exit): 
+--- Outpatient Clinic Appointment Queue (FIFO Roster) ---
+  Total Scheduled Outpatient Appointments: 3
+Queue # Patient ID      Patient Name            Arrival Clock 
+--------------------------------------------------------------------------------
+1       P102            Arthur Dent             15s           
+2       P106            Diana Prince            35s           
+3       P111            Walter White            60s           
+--------------------------------------------------------------------------------
+
+================================================================================
+  OUTPATIENT CLINIC APPOINTMENT SERVICES
+  [Clock: 65s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. Schedule Outpatient Clinic Appointment (FIFO Queue Intake)
+  2. View Scheduled Outpatient Appointment Roster
+  3. Call Next Appointment for Consultation (FIFO Turn Processing)
+  4. Cancel Outpatient Appointment (Encapsulated Queue Removal)
+  5. Convert Outpatient to Emergency Triage (Condition Deterioration)
+  0. Return to Main Menu
+
+Enter choice [1-5] (0 or 'b' to back/exit): 
+--- Call Next Outpatient Consultation ---
+  [SUCCESS] Consult Turn Called: Patient P102 (Arthur Dent).
+  Updated Patient State: UNDER_TREATMENT (Consultation underway at Node 1).
+
+================================================================================
+  OUTPATIENT CLINIC APPOINTMENT SERVICES
+  [Clock: 65s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. Schedule Outpatient Clinic Appointment (FIFO Queue Intake)
+  2. View Scheduled Outpatient Appointment Roster
+  3. Call Next Appointment for Consultation (FIFO Turn Processing)
+  4. Cancel Outpatient Appointment (Encapsulated Queue Removal)
+  5. Convert Outpatient to Emergency Triage (Condition Deterioration)
+  0. Return to Main Menu
+
+Enter choice [1-5] (0 or 'b' to back/exit): 
+--- Cancel Outpatient Appointment ---
+  Enter Scheduled Patient ID to cancel:   [SUCCESS] Appointment for patient P111 cancelled and removed from queue. Patient State: CANCELLED.
+
+================================================================================
+  OUTPATIENT CLINIC APPOINTMENT SERVICES
+  [Clock: 65s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. Schedule Outpatient Clinic Appointment (FIFO Queue Intake)
+  2. View Scheduled Outpatient Appointment Roster
+  3. Call Next Appointment for Consultation (FIFO Turn Processing)
+  4. Cancel Outpatient Appointment (Encapsulated Queue Removal)
+  5. Convert Outpatient to Emergency Triage (Condition Deterioration)
+  0. Return to Main Menu
+
+Enter choice [1-5] (0 or 'b' to back/exit): 
+--- Convert Outpatient Appointment to Emergency Triage ---
+  Enter Scheduled Patient ID:   Enter Deteriorated Urgency Acuity [1: Resuscitation .. 5: Non-Urgent]:   [SUCCESS] Patient P106 condition deteriorated; converted to Emergency Triage with Urgency 1 (1 - Resuscitation). Patient State: TRIAGED_WAITING.
+
+================================================================================
+  OUTPATIENT CLINIC APPOINTMENT SERVICES
+  [Clock: 65s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. Schedule Outpatient Clinic Appointment (FIFO Queue Intake)
+  2. View Scheduled Outpatient Appointment Roster
+  3. Call Next Appointment for Consultation (FIFO Turn Processing)
+  4. Cancel Outpatient Appointment (Encapsulated Queue Removal)
+  5. Convert Outpatient to Emergency Triage (Condition Deterioration)
+  0. Return to Main Menu
+
+Enter choice [1-5] (0 or 'b' to back/exit): 
+--- Outpatient Clinic Appointment Queue (FIFO Roster) ---
+  Total Scheduled Outpatient Appointments: 0
+  No appointments currently in queue.
+
+================================================================================
+  OUTPATIENT CLINIC APPOINTMENT SERVICES
+  [Clock: 65s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. Schedule Outpatient Clinic Appointment (FIFO Queue Intake)
+  2. View Scheduled Outpatient Appointment Roster
+  3. Call Next Appointment for Consultation (FIFO Turn Processing)
+  4. Cancel Outpatient Appointment (Encapsulated Queue Removal)
+  5. Convert Outpatient to Emergency Triage (Condition Deterioration)
+  0. Return to Main Menu
+
+Enter choice [1-5] (0 or 'b' to back/exit): 
+================================================================================
+  MAIN MENU - HOSPITAL OPERATIONS & DISPATCH
+  [Clock: 65s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. Patient Registration & Registry Management
+  2. Emergency Clinical Triage & Acuity Updates
+  3. Outpatient Clinic Appointments & FIFO Queue
+  4. Ambulance Dispatch & Patient Transit Operations
+  5. Campus Topology, Routing & Corridor Management
+  6. Patient Reports & Custom Sorting Analytics
+  7. Educational Data Structure Demonstrations (CO1 - CO6)
+  8. System Audit Trail & Cross-Service Integrity Check
+  9. Exit System
+
+Enter choice [1-9] (0 or 'b' to back/exit): 
+================================================================================
+  AMBULANCE DISPATCH & PATIENT TRANSIT OPERATIONS
+  [Clock: 65s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. Select Next Priority Emergency Candidate for Dispatch
+  2. Assign Available Dispatch Resource (Shows 2-Leg Routes & Costs)
+  3. Execute Simulation Step 1: Resource Travels to Patient Pickup Point
+  4. Execute Simulation Step 2: Transport Patient & Complete Clinical Handover
+  5. Cancel Pickup Leg (Aborts Transit & Releases Resource Immediately)
+  6. Discharge Patient from Clinical Treatment (Terminal State Isolation)
+  0. Return to Main Menu
+
+Enter choice [1-6] (0 or 'b' to back/exit): 
+--- Priority Candidate Evaluation for Dispatch ---
+  [SELECTED CANDIDATE]
+    Patient ID:       P104 (Marcus Brody)
+    Clinical Urgency: 1 - 1 - Resuscitation
+    Arrival Sequence: #4
+    Current Node:     1 (ER Triage & Main Waiting Hall)
+    Target Node:      2 (Emergency Resuscitation Bay)
+    Patient State:    DISPATCH_PENDING
+    Assigned Resource: Unassigned
+  Candidate is prioritized and ready for resource assignment.
+
+================================================================================
+  AMBULANCE DISPATCH & PATIENT TRANSIT OPERATIONS
+  [Clock: 65s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. Select Next Priority Emergency Candidate for Dispatch
+  2. Assign Available Dispatch Resource (Shows 2-Leg Routes & Costs)
+  3. Execute Simulation Step 1: Resource Travels to Patient Pickup Point
+  4. Execute Simulation Step 2: Transport Patient & Complete Clinical Handover
+  5. Cancel Pickup Leg (Aborts Transit & Releases Resource Immediately)
+  6. Discharge Patient from Clinical Treatment (Terminal State Isolation)
+  0. Return to Main Menu
+
+Enter choice [1-6] (0 or 'b' to back/exit): 
+--- Dispatch Resource Assignment ---
+  Enter Patient ID to assign (must be DISPATCH_PENDING): 
+  [PRE-ASSIGNMENT CANDIDATE INSPECTION]
+  Patient ID:       P104 (Marcus Brody)
+  Clinical Urgency: 1 - 1 - Resuscitation
+  Patient State:    DISPATCH_PENDING
+  Pickup Node:      1 (ER Triage & Main Waiting Hall)
+  Destination Node: 2 (Emergency Resuscitation Bay)
+
+  [ASSIGNMENT SUCCESSFUL]
+  Assigned Resource: GURNEY-03 (Rapid Triage Wheelchair)
+  Patient State:     DISPATCH_PENDING (Awaiting Pickup Arrival)
+  Resource State:    EN_ROUTE_PICKUP (En Route to Pickup)
+
+  [DISPATCH ROUTE LEGS & ESTIMATED TRANSIT COSTS]
+  * Leg 1 (Pickup Leg): Resource Node 1 -> Patient Node 1
+    Transit Duration: 0 seconds
+    Path: 1
+  * Leg 2 (Transport Leg): Patient Node 1 -> Destination Node 2
+    Transit Duration: 100 seconds
+    Path: 1 -> 2
+    Total Mission Transit Cost: 100 seconds
+
+================================================================================
+  AMBULANCE DISPATCH & PATIENT TRANSIT OPERATIONS
+  [Clock: 65s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. Select Next Priority Emergency Candidate for Dispatch
+  2. Assign Available Dispatch Resource (Shows 2-Leg Routes & Costs)
+  3. Execute Simulation Step 1: Resource Travels to Patient Pickup Point
+  4. Execute Simulation Step 2: Transport Patient & Complete Clinical Handover
+  5. Cancel Pickup Leg (Aborts Transit & Releases Resource Immediately)
+  6. Discharge Patient from Clinical Treatment (Terminal State Isolation)
+  0. Return to Main Menu
+
+Enter choice [1-6] (0 or 'b' to back/exit): 
+--- Execute Leg 1: Movement to Patient Pickup ---
+  Enter Assigned Patient ID:   Simulating whole-leg movement for pickup...
+  [PICKUP ARRIVAL COMPLETE]
+  Leg 1 Elapsed Transit Time: 0 seconds
+  Updated Simulation Clock:   65s
+  Patient State:              IN_TRANSIT (Patient loaded onto transport)
+  Resource State:             TRANSPORTING_PATIENT at Node 1
+
+================================================================================
+  AMBULANCE DISPATCH & PATIENT TRANSIT OPERATIONS
+  [Clock: 65s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. Select Next Priority Emergency Candidate for Dispatch
+  2. Assign Available Dispatch Resource (Shows 2-Leg Routes & Costs)
+  3. Execute Simulation Step 1: Resource Travels to Patient Pickup Point
+  4. Execute Simulation Step 2: Transport Patient & Complete Clinical Handover
+  5. Cancel Pickup Leg (Aborts Transit & Releases Resource Immediately)
+  6. Discharge Patient from Clinical Treatment (Terminal State Isolation)
+  0. Return to Main Menu
+
+Enter choice [1-6] (0 or 'b' to back/exit): 
+--- Execute Leg 2: Transport & Clinical Handover ---
+  Enter In-Transit Patient ID:   Simulating whole-leg transport movement and clinical handover...
+  [TRANSPORT & HANDOVER COMPLETE]
+  Leg 2 Elapsed Transit Time: 100 seconds
+  Updated Simulation Clock:   165s
+  Patient State:              UNDER_TREATMENT at Treatment Destination Node 2 (Emergency Resuscitation Bay)
+  Resource State:             AVAILABLE (Resource released at destination; ready for new dispatches)
+
+================================================================================
+  AMBULANCE DISPATCH & PATIENT TRANSIT OPERATIONS
+  [Clock: 165s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. Select Next Priority Emergency Candidate for Dispatch
+  2. Assign Available Dispatch Resource (Shows 2-Leg Routes & Costs)
+  3. Execute Simulation Step 1: Resource Travels to Patient Pickup Point
+  4. Execute Simulation Step 2: Transport Patient & Complete Clinical Handover
+  5. Cancel Pickup Leg (Aborts Transit & Releases Resource Immediately)
+  6. Discharge Patient from Clinical Treatment (Terminal State Isolation)
+  0. Return to Main Menu
+
+Enter choice [1-6] (0 or 'b' to back/exit): 
+--- Discharge Patient from Clinical Treatment ---
+  Enter Patient ID to discharge (must be UNDER_TREATMENT):   [SUCCESS] Patient P104 successfully discharged after medical treatment.
+  Final State: DISCHARGED (Terminal lifecycle state; completely decoupled from queues/fleet)
+
+================================================================================
+  AMBULANCE DISPATCH & PATIENT TRANSIT OPERATIONS
+  [Clock: 165s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. Select Next Priority Emergency Candidate for Dispatch
+  2. Assign Available Dispatch Resource (Shows 2-Leg Routes & Costs)
+  3. Execute Simulation Step 1: Resource Travels to Patient Pickup Point
+  4. Execute Simulation Step 2: Transport Patient & Complete Clinical Handover
+  5. Cancel Pickup Leg (Aborts Transit & Releases Resource Immediately)
+  6. Discharge Patient from Clinical Treatment (Terminal State Isolation)
+  0. Return to Main Menu
+
+Enter choice [1-6] (0 or 'b' to back/exit): 
+================================================================================
+  MAIN MENU - HOSPITAL OPERATIONS & DISPATCH
+  [Clock: 165s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. Patient Registration & Registry Management
+  2. Emergency Clinical Triage & Acuity Updates
+  3. Outpatient Clinic Appointments & FIFO Queue
+  4. Ambulance Dispatch & Patient Transit Operations
+  5. Campus Topology, Routing & Corridor Management
+  6. Patient Reports & Custom Sorting Analytics
+  7. Educational Data Structure Demonstrations (CO1 - CO6)
+  8. System Audit Trail & Cross-Service Integrity Check
+  9. Exit System
+
+Enter choice [1-9] (0 or 'b' to back/exit): 
+================================================================================
+  CAMPUS TOPOLOGY, ROUTING & CORRIDOR MANAGEMENT
+  [Clock: 165s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. View All Campus Locations & Treatment Units
+  2. View Corridors, Transit Times & Obstruction Status
+  3. Block Corridor (Simulate Construction or Emergency Obstruction)
+  4. Reopen Corridor (Restore Normal Transit)
+  5. Query Shortest Route between Locations (Dijkstra's Algorithm)
+  6. Inspect Campus Connectivity & Traversals (BFS & DFS)
+  7. Compute Minimum Spanning Tree / Forest (Kruskal & Prim Comparison)
+  0. Return to Main Menu
+
+Enter choice [1-7] (0 or 'b' to back/exit): 
+--- Shortest Route Query (Dijkstra's Algorithm) ---
+  Enter Origin Node ID [0 - 11]:   Enter Destination Node ID [0 - 11]: 
+  [ROUTE FOUND]
+  Total Transit Cost: 270 seconds
+  Hop Count:          3 corridor(s)
+  Navigation Sequence:
+    1. Node 0 (Ambulance Reception Bay)
+    2. Node 1 (ER Triage & Main Waiting Hall)
+    3. Node 5 (Central Diagnostic Radiology & CT)
+    4. Node 3 (Surgical Operating Theatres)
+
+================================================================================
+  CAMPUS TOPOLOGY, ROUTING & CORRIDOR MANAGEMENT
+  [Clock: 165s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. View All Campus Locations & Treatment Units
+  2. View Corridors, Transit Times & Obstruction Status
+  3. Block Corridor (Simulate Construction or Emergency Obstruction)
+  4. Reopen Corridor (Restore Normal Transit)
+  5. Query Shortest Route between Locations (Dijkstra's Algorithm)
+  6. Inspect Campus Connectivity & Traversals (BFS & DFS)
+  7. Compute Minimum Spanning Tree / Forest (Kruskal & Prim Comparison)
+  0. Return to Main Menu
+
+Enter choice [1-7] (0 or 'b' to back/exit): 
+--- Block Corridor (Closure / Maintenance) ---
+  Enter Node U ID [0 - 11]:   Enter Node V ID [0 - 11]:   [SUCCESS] Corridor between Node 1 (ER Triage & Main Waiting Hall) and Node 5 (Central Diagnostic Radiology & CT) is now BLOCKED.
+  Dijkstra route planner will automatically avoid this corridor.
+
+================================================================================
+  CAMPUS TOPOLOGY, ROUTING & CORRIDOR MANAGEMENT
+  [Clock: 165s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. View All Campus Locations & Treatment Units
+  2. View Corridors, Transit Times & Obstruction Status
+  3. Block Corridor (Simulate Construction or Emergency Obstruction)
+  4. Reopen Corridor (Restore Normal Transit)
+  5. Query Shortest Route between Locations (Dijkstra's Algorithm)
+  6. Inspect Campus Connectivity & Traversals (BFS & DFS)
+  7. Compute Minimum Spanning Tree / Forest (Kruskal & Prim Comparison)
+  0. Return to Main Menu
+
+Enter choice [1-7] (0 or 'b' to back/exit): 
+--- Shortest Route Query (Dijkstra's Algorithm) ---
+  Enter Origin Node ID [0 - 11]:   Enter Destination Node ID [0 - 11]: 
+  [ROUTE FOUND]
+  Total Transit Cost: 330 seconds
+  Hop Count:          3 corridor(s)
+  Navigation Sequence:
+    1. Node 0 (Ambulance Reception Bay)
+    2. Node 1 (ER Triage & Main Waiting Hall)
+    3. Node 7 (Central Inpatient Pharmacy)
+    4. Node 3 (Surgical Operating Theatres)
+
+================================================================================
+  CAMPUS TOPOLOGY, ROUTING & CORRIDOR MANAGEMENT
+  [Clock: 165s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. View All Campus Locations & Treatment Units
+  2. View Corridors, Transit Times & Obstruction Status
+  3. Block Corridor (Simulate Construction or Emergency Obstruction)
+  4. Reopen Corridor (Restore Normal Transit)
+  5. Query Shortest Route between Locations (Dijkstra's Algorithm)
+  6. Inspect Campus Connectivity & Traversals (BFS & DFS)
+  7. Compute Minimum Spanning Tree / Forest (Kruskal & Prim Comparison)
+  0. Return to Main Menu
+
+Enter choice [1-7] (0 or 'b' to back/exit): 
+--- Reopen Blocked Corridor ---
+  Enter Node U ID [0 - 11]:   Enter Node V ID [0 - 11]:   [SUCCESS] Corridor between Node 1 (ER Triage & Main Waiting Hall) and Node 5 (Central Diagnostic Radiology & CT) has been REOPENED.
+
+================================================================================
+  CAMPUS TOPOLOGY, ROUTING & CORRIDOR MANAGEMENT
+  [Clock: 165s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. View All Campus Locations & Treatment Units
+  2. View Corridors, Transit Times & Obstruction Status
+  3. Block Corridor (Simulate Construction or Emergency Obstruction)
+  4. Reopen Corridor (Restore Normal Transit)
+  5. Query Shortest Route between Locations (Dijkstra's Algorithm)
+  6. Inspect Campus Connectivity & Traversals (BFS & DFS)
+  7. Compute Minimum Spanning Tree / Forest (Kruskal & Prim Comparison)
+  0. Return to Main Menu
+
+Enter choice [1-7] (0 or 'b' to back/exit): 
+--- Minimum Spanning Tree / Forest Computation ---
+  [FULLY CONNECTED GRAPH]
+  Result is a MINIMUM SPANNING TREE (MST).
+
+  [ALGORITHM COMPARISON]
+  * Kruskal's Algorithm (Edge-centric greedy with DSU):
+    Total Spanning Weight: 1280 seconds
+    Edge Count:            11
+  * Prim's Algorithm (Vertex-centric greedy with Min-Heap):
+    Total Spanning Weight: 1280 seconds
+    Edge Count:            11
+  [VERIFICATION PASS] Kruskal and Prim total weights match identically (1280s).
+
+================================================================================
+  CAMPUS TOPOLOGY, ROUTING & CORRIDOR MANAGEMENT
+  [Clock: 165s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. View All Campus Locations & Treatment Units
+  2. View Corridors, Transit Times & Obstruction Status
+  3. Block Corridor (Simulate Construction or Emergency Obstruction)
+  4. Reopen Corridor (Restore Normal Transit)
+  5. Query Shortest Route between Locations (Dijkstra's Algorithm)
+  6. Inspect Campus Connectivity & Traversals (BFS & DFS)
+  7. Compute Minimum Spanning Tree / Forest (Kruskal & Prim Comparison)
+  0. Return to Main Menu
+
+Enter choice [1-7] (0 or 'b' to back/exit): 
+================================================================================
+  MAIN MENU - HOSPITAL OPERATIONS & DISPATCH
+  [Clock: 165s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. Patient Registration & Registry Management
+  2. Emergency Clinical Triage & Acuity Updates
+  3. Outpatient Clinic Appointments & FIFO Queue
+  4. Ambulance Dispatch & Patient Transit Operations
+  5. Campus Topology, Routing & Corridor Management
+  6. Patient Reports & Custom Sorting Analytics
+  7. Educational Data Structure Demonstrations (CO1 - CO6)
+  8. System Audit Trail & Cross-Service Integrity Check
+  9. Exit System
+
+Enter choice [1-9] (0 or 'b' to back/exit): 
+================================================================================
+  PATIENT REPORTS & CUSTOM SORTING ANALYTICS
+  [Clock: 165s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. Generate Summary Report with Custom Sorting Field & Algorithm
+  2. View Full Patient Clinical Dossier by ID
+  0. Return to Main Menu
+
+Enter choice [1-2] (0 or 'b' to back/exit): 
+--- Select Sorting Criteria for Patient Report Snapshot ---
+  Available Sort Fields:
+    1. Patient Age (Ascending)
+    2. Simulated Arrival Time (Ascending)
+    3. Clinical Urgency (Acuity Priority: 1-Resuscitation to 5-Non-Urgent)
+    4. Billing Amount ($ Ascending)
+    5. Active Waiting Duration (Longest Waiting First)
+  Select Sort Field [1-5]: 
+  Available Sorting Algorithms (CS2305 CO1, CO5):
+    1. Custom Merge Sort (Stable, Guaranteed O(n log n), O(n) Auxiliary Buffer)
+    2. Custom Quicksort (Unstable, Median-of-3 Lomuto, O(n log n) Avg, O(log n) Stack)
+    3. Custom Heapsort (Unstable, Strictly In-Place O(1) Auxiliary Memory, O(n log n))
+  Select Sorting Algorithm [1-3]: =======================================================================================================================================================
+                                                       HOSPITAL PATIENT SUMMARY REPORT SNAPSHOT
+    Report Snapshot Captured: 165s | Sorted By: Clinical Urgency (Acuity 1 to 5)
+    Total Patient Records:    13 | Note: Use Patient Details for unabbreviated names (up to 64 chars) and complaints (up to 128 chars)
+=======================================================================================================================================================
+ID                Full Name             Age  Urgency           State                   ArrSeq  ArrTime       Waiting Time                Billing       
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+P104              Marcus Brody          58   1-1 - ResuscitationDISCHARGED              4       22s           N/A (DISCHARGED)            $3500.00      
+P106              Diana Prince          31   1-1 - ResuscitationTRIAGED_WAITING         6       35s           130s                        $95.00        
+P107              Peter Parker          21   1-1 - ResuscitationTRIAGED_WAITING         7       40s           125s                        $800.00       
+P112              Barry Allen           28   1-1 - ResuscitationTRIAGED_WAITING         12      65s           100s                        $2900.00      
+P501              Jonathan Wick         45   1-1 - ResuscitationTRIAGED_WAITING         13      65s           100s                        $1500.00      
+P103              James Howlett         55   2-2 - Emergent    TRIAGED_WAITING         3       20s           145s                        $2100.00      
+P105              Bruce Wayne           38   2-2 - Emergent    TRIAGED_WAITING         5       28s           137s                        $1850.00      
+P108              Natasha Romanoff      34   2-2 - Emergent    TRIAGED_WAITING         8       44s           121s                        $1250.00      
+P109              Clark Kent            36   2-2 - Emergent    TRIAGED_WAITING         9       50s           115s                        $1600.00      
+P110              Ellen Ripley          49   3-3 - Urgent      TRIAGED_WAITING         10      55s           110s                        $620.00       
+P101              Sarah Connor          29   4-4 - Less Urgent TRIAGED_WAITING         1       10s           155s                        $450.00       
+P102              Arthur Dent           42   5-5 - Non-Urgent  UNDER_TREATMENT         2       15s           N/A (UNDER_TREATMENT)       $120.00       
+P111              Walter White          52   5-5 - Non-Urgent  CANCELLED               11      60s           N/A (CANCELLED)             $110.00       
+=======================================================================================================================================================
+  [SORTING TELEMETRY METRICS]
+  Algorithm Applied:     Merge Sort (Stable)
+  Element Record Count:  13
+  Comparisons Count:     35
+  Element Swaps Count:   0
+  Standardized Moves:    98
+  Algorithm Stability:   STABLE (Equal keys preserve relative order)
+  Auxiliary Space Used:  O(n)
+  Execution Status:      0 us
+
+  [READ-ONLY GUARANTEE VERIFIED]
+  Report generation and sorting executed strictly on independent value copies;
+  hospital registry, triage min-heap, queue order, and simulation time were 100% unaltered.
+
+================================================================================
+  PATIENT REPORTS & CUSTOM SORTING ANALYTICS
+  [Clock: 165s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. Generate Summary Report with Custom Sorting Field & Algorithm
+  2. View Full Patient Clinical Dossier by ID
+  0. Return to Main Menu
+
+Enter choice [1-2] (0 or 'b' to back/exit): 
+================================================================================
+  MAIN MENU - HOSPITAL OPERATIONS & DISPATCH
+  [Clock: 165s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. Patient Registration & Registry Management
+  2. Emergency Clinical Triage & Acuity Updates
+  3. Outpatient Clinic Appointments & FIFO Queue
+  4. Ambulance Dispatch & Patient Transit Operations
+  5. Campus Topology, Routing & Corridor Management
+  6. Patient Reports & Custom Sorting Analytics
+  7. Educational Data Structure Demonstrations (CO1 - CO6)
+  8. System Audit Trail & Cross-Service Integrity Check
+  9. Exit System
+
+Enter choice [1-9] (0 or 'b' to back/exit): 
+================================================================================
+  EDUCATIONAL DATA STRUCTURE DEMONSTRATIONS (CO1 - CO6)
+  [Clock: 165s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. Execute Full Comprehensive Educational Suite (All 5 Demonstrations)
+  2. Demo 1: Sorting Algorithms Comparison Suite (Merge vs Quick vs Heap) (CO1, CO5)
+  3. Demo 2: Hash Collision Resolution (Separate Chaining vs Linear Probing) (CO2)
+  4. Demo 3: Graph Representations (Adjacency Matrix vs Adjacency List) (CO6)
+  5. Demo 4: Binary Search Tree Operations (Traversals, Mirroring, Deletion) (CO4)
+  6. Demo 5: Shortest Path vs Minimum Spanning Tree (Dijkstra vs Kruskal/Prim) (CO6)
+  0. Return to Main Menu
+
+Enter choice [1-6] (0 or 'b' to back/exit): ========================================================================================================================
+                    EDUCATIONAL DEMONSTRATION: SORTING ALGORITHMS COMPARISON (CO1, CO5)
+========================================================================================================================
+  Input Dataset Size: 13 Patient Snapshot Records
+  Sorting Criterion:  Clinical Urgency (Ascending 1 to 5, Acuity Priority)
+  Evaluation Rule:    Comparing exact operation counts (Comparisons, Swaps, Moves).
+                      [Note: When trace logging is enabled, microsecond duration is labeled
+                       'N/A (Traced)' to prevent conflating trace string formatting overhead with pure
+                       algorithmic speed. Algorithmic efficiency is rigorously evaluated via exact
+                       deterministic operation counts (Comparisons, Swaps, Moves).]
+
+Algorithm                     Stable?   Comparisons   Swaps     Moves       Time / Status   Time (Avg)    Time (Worst)  Space (Aux) 
+------------------------------------------------------------------------------------------------------------------------
+Merge Sort (Stable)           YES       35            0         98          N/A (Traced)    O(n log n)    O(n log n)    O(n)        
+Quicksort (Unstable)          NO        52            25        75          N/A (Traced)    O(n log n)    O(n^2)        O(log n)    
+Heapsort (Unstable, In-Place) NO        61            41        123         N/A (Traced)    O(n log n)    O(n log n)    O(1)        
+------------------------------------------------------------------------------------------------------------------------
+
+  [STABILITY ANALYSIS]
+  * Merge Sort is STABLE: equal keys strictly preserve original FIFO arrival order.
+  * Quicksort is UNSTABLE: long-range partitioning swaps reorder equal elements.
+  * Heapsort is UNSTABLE: root-to-tail swaps and sift-down violate original relative order.
+  * Space Comparison: Heapsort achieves strictly O(1) in-place auxiliary memory;
+                      Quicksort requires O(log n) recursion stack;
+                      Merge Sort requires O(n) auxiliary temporary buffer.
+
+
+================================================================================
+  EDUCATIONAL DATA STRUCTURE DEMONSTRATIONS (CO1 - CO6)
+  [Clock: 165s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. Execute Full Comprehensive Educational Suite (All 5 Demonstrations)
+  2. Demo 1: Sorting Algorithms Comparison Suite (Merge vs Quick vs Heap) (CO1, CO5)
+  3. Demo 2: Hash Collision Resolution (Separate Chaining vs Linear Probing) (CO2)
+  4. Demo 3: Graph Representations (Adjacency Matrix vs Adjacency List) (CO6)
+  5. Demo 4: Binary Search Tree Operations (Traversals, Mirroring, Deletion) (CO4)
+  6. Demo 5: Shortest Path vs Minimum Spanning Tree (Dijkstra vs Kruskal/Prim) (CO6)
+  0. Return to Main Menu
+
+Enter choice [1-6] (0 or 'b' to back/exit): ====================================================================================================
+          EDUCATIONAL DEMONSTRATION: BINARY SEARCH TREE OPERATIONS (CO4)
+====================================================================================================
+  Initial BST Built with 7 Nodes: [50, 30, 70, 20, 40, 60, 80]
+    Tree Height: 3 | Leaf Nodes: 4
+
+  [TRAVERSALS]
+    In-Order (L-Root-R, Ascending Sorted):   20 30 40 50 60 70 80 
+    Pre-Order (Root-L-R, Prefix Structure): 50 30 20 40 70 60 80 
+    Post-Order (L-R-Root, Bottom-Up):       20 40 30 60 80 70 50 
+    Level-Order (Breadth-First via Queue):  50 30 70 20 40 60 80 
+
+  [BST MIRROR DEMONSTRATION]
+    Mirror In-Order (R-Root-L, Descending Sorted): 80 70 60 50 40 30 20 
+    [Type-Safe Policy]: Mirrored tree is educational and cannot be used as standard search BST.
+
+  [3-CASE DELETION DEMONSTRATION]
+  Case 1: Deleting Leaf Node (Key 20) ...
+    In-Order after Leaf Deletion: 30 40 50 60 70 80 
+  Case 2: Deleting Node with Single Child (Key 30, which now only has child 40) ...
+    In-Order after Single-Child Deletion: 40 50 60 70 80 
+  Case 3: Deleting Node with Two Children (Key 70, replaced by in-order successor 80) ...
+    In-Order after Two-Child Deletion: 40 50 60 80 
+
+
+================================================================================
+  EDUCATIONAL DATA STRUCTURE DEMONSTRATIONS (CO1 - CO6)
+  [Clock: 165s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. Execute Full Comprehensive Educational Suite (All 5 Demonstrations)
+  2. Demo 1: Sorting Algorithms Comparison Suite (Merge vs Quick vs Heap) (CO1, CO5)
+  3. Demo 2: Hash Collision Resolution (Separate Chaining vs Linear Probing) (CO2)
+  4. Demo 3: Graph Representations (Adjacency Matrix vs Adjacency List) (CO6)
+  5. Demo 4: Binary Search Tree Operations (Traversals, Mirroring, Deletion) (CO4)
+  6. Demo 5: Shortest Path vs Minimum Spanning Tree (Dijkstra vs Kruskal/Prim) (CO6)
+  0. Return to Main Menu
+
+Enter choice [1-6] (0 or 'b' to back/exit): 
+================================================================================
+  MAIN MENU - HOSPITAL OPERATIONS & DISPATCH
+  [Clock: 165s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. Patient Registration & Registry Management
+  2. Emergency Clinical Triage & Acuity Updates
+  3. Outpatient Clinic Appointments & FIFO Queue
+  4. Ambulance Dispatch & Patient Transit Operations
+  5. Campus Topology, Routing & Corridor Management
+  6. Patient Reports & Custom Sorting Analytics
+  7. Educational Data Structure Demonstrations (CO1 - CO6)
+  8. System Audit Trail & Cross-Service Integrity Check
+  9. Exit System
+
+Enter choice [1-9] (0 or 'b' to back/exit): 
+================================================================================
+  SYSTEM AUDIT TRAIL & INTEGRITY CHECK
+  [Clock: 165s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. View Chronological Audit Trail Log (DoublyLinkedList Event History)
+  2. Run Cross-Service System Consistency & Invariant Verification
+  3. Advance Simulation Clock (Simulate Elapsed Inactive Time)
+  4. View Dispatch Fleet Status & Allocation
+  0. Return to Main Menu
+
+Enter choice [1-4] (0 or 'b' to back/exit): 
+--- Chronological System Audit Log ---
+  Total Audit Events Recorded: 37
+
+Time    Patient     Action                      State Transition      Resource  Details
+----------------------------------------------------------------------------------------------------
+65s     P101        REGISTERED                  REGISTERED->REGISTE.. -         Seed registration: Sarah Connor
+65s     P101        TRIAGED                     REGISTERED->TRIAGED.. -         Seed triage enqueue
+65s     P102        REGISTERED                  REGISTERED->REGISTE.. -         Seed registration: Arthur Dent
+65s     P102        APPOINTMENT_SCHEDULED       REGISTERED->APPOINT.. -         Seed appointment scheduled
+65s     P103        REGISTERED                  REGISTERED->REGISTE.. -         Seed registration: James Howlett
+65s     P103        TRIAGED                     REGISTERED->TRIAGED.. -         Seed triage enqueue
+65s     P104        REGISTERED                  REGISTERED->REGISTE.. -         Seed registration: Marcus Brody
+65s     P104        TRIAGED                     REGISTERED->TRIAGED.. -         Seed triage enqueue
+65s     P105        REGISTERED                  REGISTERED->REGISTE.. -         Seed registration: Bruce Wayne
+65s     P105        TRIAGED                     REGISTERED->TRIAGED.. -         Seed triage enqueue
+65s     P106        REGISTERED                  REGISTERED->REGISTE.. -         Seed registration: Diana Prince
+65s     P106        APPOINTMENT_SCHEDULED       REGISTERED->APPOINT.. -         Seed appointment scheduled
+65s     P107        REGISTERED                  REGISTERED->REGISTE.. -         Seed registration: Peter Parker
+65s     P107        TRIAGED                     REGISTERED->TRIAGED.. -         Seed triage enqueue
+65s     P108        REGISTERED                  REGISTERED->REGISTE.. -         Seed registration: Natasha Romanoff
+65s     P108        TRIAGED                     REGISTERED->TRIAGED.. -         Seed triage enqueue
+65s     P109        REGISTERED                  REGISTERED->REGISTE.. -         Seed registration: Clark Kent
+65s     P109        TRIAGED                     REGISTERED->TRIAGED.. -         Seed triage enqueue
+65s     P110        REGISTERED                  REGISTERED->REGISTE.. -         Seed registration: Ellen Ripley
+65s     P110        TRIAGED                     REGISTERED->TRIAGED.. -         Seed triage enqueue
+65s     P111        REGISTERED                  REGISTERED->REGISTE.. -         Seed registration: Walter White
+65s     P111        APPOINTMENT_SCHEDULED       REGISTERED->APPOINT.. -         Seed appointment scheduled
+65s     P112        REGISTERED                  REGISTERED->REGISTE.. -         Seed registration: Barry Allen
+65s     P112        TRIAGED                     REGISTERED->TRIAGED.. -         Seed triage enqueue
+65s     P501        REGISTERED                  REGISTERED->REGISTE.. -         New patient registered: Jonathan Wick
+65s     P501        TRIAGED                     REGISTERED->TRIAGED.. -         Triage prioritized: 1 - Resuscitation
+65s     P108        URGENCY_UPDATED             TRIAGED_WAITING->TR.. -         Urgency changed from 3 - Urgent to 2 - Emergent; arrivalSequence preserved (8)
+65s     P102        APPOINTMENT_CALLED          APPOINTMENT_SCHEDUL.. -         Consultation turn called in FIFO order; UNDER_TREATMENT
+65s     P111        APPOINTMENT_CANCELLED       APPOINTMENT_SCHEDUL.. -         Appointment cancelled via encapsulated queue removal
+65s     P106        APPOINTMENT_CONVERTED_TO_EMERGENCYAPPOINTMENT_SCHEDUL.. -         Condition deteriorated; moved from appointment queue to emergency triage
+65s     P104        DISPATCH_SELECTED           TRIAGED_WAITING->DI.. -         Extracted from triage for dispatch consideration
+65s     P104        DISPATCH_ASSIGNED           DISPATCH_PENDING->D.. GURNEY-03 Resource GURNEY-03 assigned (Leg 1 pickup: 0s, Leg 2 transport: 100s)
+65s     P104        PICKUP_COMPLETE             DISPATCH_PENDING->I.. GURNEY-03 Resource reached pickup point in 0s; patient IN_TRANSIT
+165s    P104        HANDOVER_COMPLETE           IN_TRANSIT->UNDER_T.. -         Handover complete at node 2 in 100s; resource released to AVAILABLE; patient UNDER_TREATMENT
+165s    P104        DISCHARGED                  UNDER_TREATMENT->DI.. -         Clinical treatment finished; patient successfully discharged
+165s    SYSTEM      CORRIDOR_BLOCKED            REGISTERED->REGISTE.. -         Corridor (1 <-> 5) blocked
+165s    SYSTEM      CORRIDOR_REOPENED           REGISTERED->REGISTE.. -         Corridor (1 <-> 5) reopened
+----------------------------------------------------------------------------------------------------
+
+================================================================================
+  SYSTEM AUDIT TRAIL & INTEGRITY CHECK
+  [Clock: 165s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. View Chronological Audit Trail Log (DoublyLinkedList Event History)
+  2. Run Cross-Service System Consistency & Invariant Verification
+  3. Advance Simulation Clock (Simulate Elapsed Inactive Time)
+  4. View Dispatch Fleet Status & Allocation
+  0. Return to Main Menu
+
+Enter choice [1-4] (0 or 'b' to back/exit): 
+--- Comprehensive Cross-Service Consistency Checker ---
+  [SYSTEM INTEGRITY: VERIFIED HEALTHY]
+  * Triage binary min-heap invariant holds across all records.
+  * All waiting triage patients exist in the heap and have TRIAGED_WAITING state.
+  * Appointment queue FIFO order and reciprocal states match registry perfectly.
+  * Pending dispatch pool contains all unassigned candidates with exactly 1 reference.
+  * Assigned patients and vehicles have reciprocal 1-to-1 matching and compatible states.
+  * Terminal patients (DISCHARGED, CANCELLED) are completely isolated from active queues.
+
+================================================================================
+  SYSTEM AUDIT TRAIL & INTEGRITY CHECK
+  [Clock: 165s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. View Chronological Audit Trail Log (DoublyLinkedList Event History)
+  2. Run Cross-Service System Consistency & Invariant Verification
+  3. Advance Simulation Clock (Simulate Elapsed Inactive Time)
+  4. View Dispatch Fleet Status & Allocation
+  0. Return to Main Menu
+
+Enter choice [1-4] (0 or 'b' to back/exit): 
+================================================================================
+  MAIN MENU - HOSPITAL OPERATIONS & DISPATCH
+  [Clock: 165s] | [Patients: 13] | [Fleet: 3] | [Memory-Only Mode]
+================================================================================
+  1. Patient Registration & Registry Management
+  2. Emergency Clinical Triage & Acuity Updates
+  3. Outpatient Clinic Appointments & FIFO Queue
+  4. Ambulance Dispatch & Patient Transit Operations
+  5. Campus Topology, Routing & Corridor Management
+  6. Patient Reports & Custom Sorting Analytics
+  7. Educational Data Structure Demonstrations (CO1 - CO6)
+  8. System Audit Trail & Cross-Service Integrity Check
+  9. Exit System
+
+Enter choice [1-9] (0 or 'b' to back/exit): 
+================================================================================
+  Shutting down Smart Hospital Emergency Triage & Route Dispatch System.
+  Notice: All in-memory operational state and audit logs are discarded on exit.
+================================================================================

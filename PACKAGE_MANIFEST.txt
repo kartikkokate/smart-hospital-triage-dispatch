@@ -1,0 +1,87 @@
+================================================================================
+SMART HOSPITAL EMERGENCY TRIAGE & ROUTE DISPATCH SYSTEM (CS2305)
+FINAL SUBMISSION SOURCE PACKAGE MANIFEST
+Academic Year: 2026-27 | Semester 1 | B.Tech Computer Engineering
+================================================================================
+
+PACKAGE ARCHIVE: SmartHospitalSystem_CS2305_Submission.zip
+TARGET PLATFORM: Standard C++17 (Windows MinGW GCC 6.3 / Portable CMake)
+TOTAL ARCHIVED FILES: 47 files across 9 directory locations
+
+[BUILD CONFIGURATION & SCRIPTS] (2 files)
+CMakeLists.txt                       Portable multi-platform CMake configuration
+build_and_test.bat                   Windows MinGW batch compilation and test script
+
+[PROJECT SPECIFICATIONS & MANIFEST] (3 files)
+README.md                            Comprehensive system manual and quickstart
+plan.md                              Detailed milestone specification and audit record
+PACKAGE_MANIFEST.txt                 This explicit package contents manifest
+
+[CORE ALGORITHMS: include/algorithms/] (2 files)
+include/algorithms/CustomSorting.hpp Custom Merge Sort, Quicksort, and Heapsort
+include/algorithms/DistanceArithmetic.hpp Safe int64_t distance saturation arithmetic
+
+[DATA STRUCTURES: include/ds/] (10 files)
+include/ds/BinaryMinHeap.hpp         Generic BinaryMinHeap & composite TriageMinHeap
+include/ds/BinarySearchTree.hpp      Custom BST with 3-case deletion & traversals
+include/ds/CampusGraph.hpp           Dual synchronized Adjacency Matrix & List graph
+include/ds/CustomQueue.hpp           Custom linked FIFO queue with encapsulated operations
+include/ds/CustomStack.hpp           Custom linked LIFO stack
+include/ds/DisjointSetUnion.hpp      Disjoint Set Union (DSU) with rank & path compression
+include/ds/DoublyLinkedList.hpp      Custom doubly linked list with bidirectional links
+include/ds/HashTableChaining.hpp     Separate chaining hash table (expected O(1) lookup)
+include/ds/HashTableProbing.hpp      Open addressing linear probing hash table
+include/ds/SinglyLinkedList.hpp      Custom singly linked list with iterators
+
+[DOMAIN MODELS: include/models/] (5 files)
+include/models/AuditEvent.hpp        Immutable audit log record structure
+include/models/CampusLocation.hpp    Campus node, CorridorEdge definitions
+include/models/DispatchResource.hpp  Ambulance/gurney entity, ResourceState
+include/models/Patient.hpp           Patient entity, UrgencyLevel, PatientState
+include/models/PatientSnapshot.hpp   Independent value copy for reporting
+
+[SERVICES: include/services/] (9 files)
+include/services/AppointmentManager.hpp Outpatient clinic appointment queue manager
+include/services/CampusMapManager.hpp Campus routing, closures, Dijkstra, & MST
+include/services/DataLoader.hpp      CSV and map topology parsing coordinator
+include/services/DemonstrationService.hpp Educational demonstrations (CO1-CO6)
+include/services/DispatchManager.hpp Mobile fleet routing and two-leg transit manager
+include/services/HospitalRegistry.hpp Authoritative patient registry & multi-indexing
+include/services/HospitalSystem.hpp  Top-level facade coordinating all services
+include/services/ReportingService.hpp Non-mutating reporting & sorting analytics
+include/services/TriageManager.hpp   Emergency triage min-heap coordinator
+
+[USER INTERFACE: include/ui/] (1 file)
+include/ui/ConsoleApp.hpp            Iterative interactive console user interface
+
+[APPLICATION SOURCES: src/] (4 files)
+src/main.cpp                         Entry point (interactive & self-validating --demo)
+src/models/DispatchResource.cpp      Resource model string helpers & conversions
+src/models/Patient.cpp               Patient model string helpers & conversions
+src/services/DataLoader.cpp          Transactional file parser implementation
+
+[SEED DATASETS: data/] (3 files)
+data/campus_map_seed.txt             12-node, 15-edge campus topology (1850s sum)
+data/patients_seed.csv               12 synthetic patient intake records (P101-P112)
+data/resources_seed.csv              3 transfer gurneys (GURNEY-01 to GURNEY-03)
+
+[AUTOMATED TEST HARNESS: tests/] (1 file)
+tests/TestRunner.cpp                 Complete test harness containing 41 test modules
+
+[ACADEMIC DELIVERABLES & REPORTS: docs/] (7 files)
+docs/complexity_reference.md         Time and space complexity reference manual
+docs/co_mapping.md                   Course Outcome (CO1-CO6) mapping document
+docs/demo_script.md                  5-8 minute live demonstration walkthrough script
+docs/demo_transcript.txt             Recorded evidence transcript of scripted live demo
+docs/project_report.md               Comprehensive academic project report
+docs/verification_report.md          Final verification results and audit report
+docs/viva_prep.md                    Second-year viva preparation & defense guide
+
+[EXCLUSIONS (NOT PACKAGED)]
+- bin/                               (Compiled binaries SmartHospitalSystem.exe, TestRunner.exe)
+- build_obj/                         (Temporary compiler object directories)
+- *.log, *.tmp                       (Temporary execution logs)
+- Any host-specific IDE or VCS files (.git, .vscode, .gemini)
+
+Total Files in Archive: Exactly 47 files across 9 directory locations.
+================================================================================

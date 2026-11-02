@@ -1,0 +1,10 @@
+{
+  "description": "Helps hospital teams prioritize emergency patients, manage appointments, dispatch transport resources, and optimize campus routes from one operations dashboard.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

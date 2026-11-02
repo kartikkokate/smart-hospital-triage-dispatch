@@ -1,0 +1,4 @@
+resourceId,name,state,currentNodeId,assignedPatientId
+GURNEY-01,Trauma Transfer Gurney,AVAILABLE,0,
+GURNEY-02,Critical Care Mobile Unit,AVAILABLE,6,
+GURNEY-03,Rapid Triage Wheelchair,AVAILABLE,1,

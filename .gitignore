@@ -1,0 +1,10 @@
+bin/
+build_obj/
+build/
+node_modules/
+dist/
+.env
+.env.local
+*.zip
+*.log
+package-lock.json

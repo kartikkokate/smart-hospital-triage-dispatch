@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: smart-hospital-api
+    runtime: docker
+    healthCheckPath: /api/health
+    envVars:
+      # Set to your exact Vercel origin, e.g. https://your-app.vercel.app (no trailing slash)
+      - key: HOSPITAL_ALLOWED_ORIGINS
+        sync: false
+      - key: HOSPITAL_ALLOW_RESET
+        value: "0"
